@@ -1,0 +1,24 @@
+
+.card-img{
+    width: 320px;
+    height: 160px;
+    Object-fit: cover;
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card:hover{
+    box-shadow: 0px 4px 12px 2px rgba(0,0,0,0.25);
+    transform: translate(-5px);
+}
+.card-detail{
+    padding: 12px 8px;
+}
+small{
+    color: #8c8c8e;
+}
+h1{
+    color: #1BD4A5;
+}
