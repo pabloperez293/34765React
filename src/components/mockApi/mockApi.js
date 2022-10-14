@@ -31,6 +31,6 @@ const data = [
 
 export function getAlbums() {
     return new Promise( (res) =>{
-        setTimeout( () => res(data),3000 )
+        setTimeout( () => res(data), 2000 )
     })
 }

@@ -33,12 +33,14 @@ import "./card.css";
     <>
       <div onClick={ handleCardClick} className="card m-2" style={cardStyles}>
         <div className="card-img">
-          <img src={props.img} alt=""></img>
+          <img style={imgStyle} src={props.img} alt={props.title}></img>
         </div>
         <div className="card-detail">
           <h2>{props.title}</h2>
           <p>{props.detail}</p>
-          <h4>$ {props.price}</h4>
+          <h4 style={ priceStyle }>
+          {props.offer ? <p>oferton</p>: <></>} $ {props.price }
+          </h4>
         </div>
 
         <Button otraprop="otraprop">{`Comprar ${props.title}`}

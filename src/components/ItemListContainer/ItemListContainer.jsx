@@ -2,10 +2,11 @@ import React , { useState, useEffect} from "react";
 import "./itemlistcontainer.css"
 import { getAlbums } from "../mockApi/mockApi"
 import ItemList from "./ItemList";
+import ItemCount from "../ItemCount/ItemCount";
 
 
 function ItemListContainer(props) {
-  const [ songList, setSongList ] = useState([]);
+  const [ songList , setSongList ] = useState([]);
 
 // Controlo con el useefect lo que pido.
   useEffect( () =>{
@@ -16,10 +17,14 @@ function ItemListContainer(props) {
 ) 
   return (
     <div className="container">    
-      <h2> title</h2>
-    <ItemList songList={songList} />
+    <h2> title</h2>
+    <ItemList songList={ songList } />
+    <hr/>
+
+    <ItemCount text={"Se agrega al carrito "} initial={1} stock={5}/>
+    <ItemCount text={"Se agrega al carrito2 "} initial={4} stock={10}/>
+
     </div>
   );
 }
-
 export default ItemListContainer;
