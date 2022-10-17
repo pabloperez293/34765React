@@ -4,10 +4,13 @@ import { getAlbums } from "../mockApi/mockApi"
 import ItemList from "./ItemList";
 import ItemCount from "../ItemCount/ItemCount";
 
+// import { useParams } from "react-router-dom"
 
 function ItemListContainer(props) {
   const [ songList , setSongList ] = useState([]);
 
+  // const {  } = ()
+  
 // Controlo con el useefect lo que pido.
   useEffect( () =>{
     getAlbums().then( ( data ) => {

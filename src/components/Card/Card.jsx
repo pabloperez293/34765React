@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./card.css";
+
 
   export default function Card(props) {
     const [ expired, setExpired ] = useState(props.expired)
@@ -30,7 +32,6 @@ import "./card.css";
 
   }
   return (
-    <>
       <div onClick={ handleCardClick} className="card m-2" style={cardStyles}>
         <div className="card-img">
           <img style={imgStyle} src={props.img} alt={props.title}></img>
@@ -42,11 +43,10 @@ import "./card.css";
           {props.offer ? <p>oferton</p>: <></>} $ {props.price }
           </h4>
         </div>
-
-        <Button otraprop="otraprop">{`Comprar ${props.title}`}
-          <ion-icon name="heart-outline"></ion-icon>
-        </Button>
+        <Link to={`/song/${props.id}`}>
+          <Button otraprop="otraprop">{`Comprar ${props.title}`}
+            <ion-icon name="heart-outline"></ion-icon></Button>
+        </Link>        
       </div>
-    </>
-  );
+  )
 }
