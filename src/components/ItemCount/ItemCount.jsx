@@ -1,26 +1,40 @@
 import React, { useState } from 'react'
 import FlexWrapper from '../FlexWrapper/FlexWrapper'
 import Button from '../Button/Button'
+import "./itemcount.css";
 
-export default function ItemCount({ stock , inital , text}){
+export default function ItemCount({ stock , inital , text,onAddToCart }){
     const [ count, setCount] = useState(inital)
 
     function handleSubstract(){
        if( count > 1 ) setCount ( count - 1 )
     }
     function handleAdd(){
-       if ( count < 10 )  setCount ( count + 1 )
+       if ( count < stock )  setCount ( count + 1 )
     }
 
-    return (
+return (
+    <div className='itemcount_container'>
+        <FlexWrapper>
         <div>
             <h2> Realice su compra</h2>
-            <FlexWrapper>
+            <div className='itemcount_control'>
             <Button onClick={ handleSubstract }> - </Button>
+            </div>
             <strong> { count }</strong>
+
             <Button onClick={ handleAdd }> + </Button>
-            </FlexWrapper>
-            <Button> { text }</Button>
+
         </div>
+
+        <div className='itemcount_btns'>
+            <button onClick={() =>{ onAddToCart(count)
+            }}
+            >
+            {text}
+            </button>
+        </div>
+        </FlexWrapper>
+    </div>
     )
 }

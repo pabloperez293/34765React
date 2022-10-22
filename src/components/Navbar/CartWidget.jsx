@@ -1,13 +1,17 @@
 import React from "react";
+import { useContext } from "react";
+import { cartContext } from "--/../context/cartContext"
 
 function CartWidget() {
+
+  const { getTotalItemCount } = useContext(cartContext)
+
   return (
-    <div>    
-      <h3> Like
-      <ion-icon name="heart-outline"></ion-icon>
-      </h3>
-    </div>
-  );
+  <a href="/cart">
+    <span> X </span>
+    <span> { getTotalItemCount() }</span>
+  </a>    
+  )
 }
 
 export default CartWidget;

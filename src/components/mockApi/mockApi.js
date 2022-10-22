@@ -44,7 +44,6 @@ const data = [
         detail: "Rapero",
         stock: 10,
         category:"Rap"
-
     },
     {
         id: 6,
@@ -68,13 +67,17 @@ export function getUnAlbums(idParams) {
         // Con este metodo elije que retornar del data 
         let songReq = data.find(( item ) => {
             // convertimos el idParams porque lo toma como string 
-            return item.id === Number (idParams) 
+            return item.itemid === Number (idParams) 
         } )
         // console.log("algo esta ? "+ songReq)
         setTimeout( () => res(songReq), 1000 )
     })
 }
 
-export function getAlbumsByCategory(id) {
+export function getAlbumsByCategory(idCategoryParams) {
+    return new Promise ( (res ) => {
+        let arrayFilterSongs = data.filter( item => item.category === idCategoryParams)
+        setTimeout(( ) => res(arrayFilterSongs), 1000 )
+    })
 
 }

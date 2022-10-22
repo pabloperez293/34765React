@@ -1,23 +1,31 @@
 import React , { useState, useEffect} from "react";
 import "./itemlistcontainer.css"
-import { getAlbums } from "../mockApi/mockApi"
+import { getAlbums, getAlbumsByCategory } from "../mockApi/mockApi"
 import ItemList from "./ItemList";
 import ItemCount from "../ItemCount/ItemCount";
 
-// import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 function ItemListContainer(props) {
   const [ songList , setSongList ] = useState([]);
 
-  // const {  } = ()
+  // Con esto veremos los parametros que elije 
+  const params = useParams()
+  const categoryId = params.categoryId 
   
 // Controlo con el useefect lo que pido.
   useEffect( () =>{
-    getAlbums().then( ( data ) => {
-      setSongList(data)
+    if( categoryId === undefined) {
+        getAlbums().then( ( data ) => {
+          setSongList(data)
      })
-  },[]
-) 
+    } else {
+      getAlbumsByCategory( categoryId ).then( ( data ) => {
+        setSongList(data)
+    })
+    }
+  },[categoryId])
+
   return (
     <div className="container">    
     <h2> title</h2>

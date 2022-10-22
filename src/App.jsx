@@ -13,10 +13,10 @@ function App() {
     <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a nuestra plataforma de Musica" />} />
-          <Route path="/song/:id" element= { <ItemDetailContainer />} />
+          <Route path="/" element={<ItemListContainer />}/>
+          <Route path="/song/:itemid" element= { <ItemDetailContainer />} />
           <Route path="*" element= { <h4> Sorry not found</h4>} />
-          <Route path="/category/:id" element= {<ItemListContainer />} />
+          <Route path="/category/:categoryId" element= {<ItemListContainer />} />
         </Routes>
     </BrowserRouter>
     </div>

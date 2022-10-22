@@ -1,5 +1,6 @@
 import React from "react";
 import "./navar.css"
+// import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom"
 
 function NavBar() {
@@ -12,17 +13,17 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <Link to="/">
-              {/* <img src="./Flow.png" className="img logoFlow"></img> */}
+              Incio
             </Link>
-            <Link className="nav-item">
-              <li className="nav-link " to="/song">Temas</li>
+            <Link className="nav-item" to="/song">
+              Temas
             </Link>
             <Link className="nav-item" to="/category/pop">
-              <li className="nav-link"> Pop </li>
+               Pop 
             </Link>
-            <li className="nav-item"  to="/category/Rap">
-              <Link className="nav-link" href="#"> Rap</Link>
-            </li>
+            <Link className="nav-item"  to="/category/Rap">
+            Rap
+            </Link>
           </ul>
         </div>
       </div>
