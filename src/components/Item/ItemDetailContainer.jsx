@@ -1,10 +1,7 @@
 import React , { useState, useEffect} from "react";
 import { getUnAlbums } from "../mockApi/mockApi"
-
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import CardDetail from "../Card/CardDetail"
-
-// leer param de url
 import { useParams } from "react-router-dom"
 
 function ItemDetailContainer(props) {
@@ -23,14 +20,15 @@ const { id } = useParams()
   return (
     <FlexWrapper>
         <CardDetail    
-            id={song.id}
-            key={song.id}
-            title={song.title}
-            img={song.img} 
-            price={song.price} 
-            detail={song.detail}     
-            stock={song.stock}
-            expired={song.expired} 
+        song={song}
+            // id={song.id}
+            // key={song.id}
+            // title={song.title}
+            // img={song.img} 
+            // price={song.price} 
+            // detail={song.detail}     
+            // stock={song.stock}
+            // expired={song.expired} 
             />
     </FlexWrapper>    
   );

@@ -29,7 +29,6 @@ import "./card.css";
   function handleCardClick() {
     // con este operador ! lo convierte en el estado que este cambiandolo
     setExpired( !expired )
-
   }
   return (
       <div onClick={ handleCardClick} className="card m-2" style={cardStyles}>
@@ -44,7 +43,7 @@ import "./card.css";
           </h4>
         </div>
         <Link to={`/song/${props.id}`}>
-          <Button otraprop="otraprop">{`Comprar ${props.title}`}
+          <Button color={props.color}>{`Comprar ${props.title}`}
             <ion-icon name="heart-outline"></ion-icon></Button>
         </Link>        
       </div>
